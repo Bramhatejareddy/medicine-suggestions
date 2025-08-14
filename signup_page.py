@@ -3,7 +3,7 @@ from database import add_user
 import re
 def navigate_to_page(page_name):
     st.session_state["current_page"] = page_name
-    st.experimental_rerun()
+    st.rerun()
 def validate_mail(mail):
     valid = re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', mail)
     return True
@@ -55,4 +55,5 @@ def signup_page():
                 st.error("Password must be at least 8 characters long.")
         with col3:
             if st.form_submit_button("Already have an account🙋🏽‍♂️"):
+
                 navigate_to_page("login")
