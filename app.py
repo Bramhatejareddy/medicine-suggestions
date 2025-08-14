@@ -1,4 +1,5 @@
 import streamlit as st
+import nltk
 from home_page import home_page
 from login_page import login_page
 from login_page import forgot_password_page
@@ -6,6 +7,15 @@ from signup_page import signup_page
 from user_home_page import user_home_page
 # from forgot_password_page import forgot_password_page
 
+
+
+@st.cache_resource  # so it only runs once on the server
+def setup_nltk():
+    nltk.download('punkt')
+    nltk.download('stopwords')
+    nltk.download('wordnet')
+
+setup_nltk()
 
 st.set_page_config(page_title="Drug Recommendations", page_icon="🩺")
 # Initialize session state
@@ -31,3 +41,4 @@ elif st.session_state["current_page"] == "forgot_password":
 
 else:
     st.error("Something went wrong. Please reload the app.")
+
