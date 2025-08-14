@@ -202,6 +202,8 @@ def user_home_page():
         unsafe_allow_html=True
         )
         nltk.download('punkt_tab')
+        nltk.download('stopwords')
+        nltk.download('wordnet')
 
         st.title('Medicine Recommendation System')
         text = st.text_area(label ='Enter the symptoms you are experiencing.',placeholder = 'E.g headache, stomach pain, diarrhea, body pain,fever,cold,hypertension e.t.c',height=20)
@@ -654,6 +656,7 @@ def user_home_page():
         st.session_state["logged_in"] = False
         st.session_state["current_user"] = None
         navigate_to_page("home")
+
 
 
 
