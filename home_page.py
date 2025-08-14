@@ -4,7 +4,7 @@ from database import authenticate_user
 # Navigation function
 def navigate_to_page(page_name):
     st.session_state["current_page"] = page_name
-    st.experimental_rerun()
+    st.rerun()
 def home_page():
     # Add info about the eye disease detection system in the sidebar
     st.sidebar.markdown(
@@ -122,5 +122,6 @@ def home_page():
             navigate_to_page("signup")
         if forgot:
             navigate_to_page("forgot_password")
+
 
     st.markdown('</div>', unsafe_allow_html=True)
