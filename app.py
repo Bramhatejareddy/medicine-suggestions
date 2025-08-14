@@ -1,5 +1,5 @@
 import streamlit as st
-import nltk
+import nltk as n
 from home_page import home_page
 from login_page import login_page
 from login_page import forgot_password_page
@@ -11,9 +11,9 @@ from user_home_page import user_home_page
 
 @st.cache_resource  # so it only runs once on the server
 def setup_nltk():
-    nltk.download('punkt')
-    nltk.download('stopwords')
-    nltk.download('wordnet')
+    n.download('punkt')
+    n.download('stopwords')
+    n.download('wordnet')
 
 setup_nltk()
 
@@ -41,4 +41,5 @@ elif st.session_state["current_page"] == "forgot_password":
 
 else:
     st.error("Something went wrong. Please reload the app.")
+
 
