@@ -1,5 +1,5 @@
 import os
-import nltk
+import nltk as nltk
 import streamlit as st
 from streamlit_option_menu import option_menu
 from database import fetch_user
@@ -656,6 +656,7 @@ def user_home_page():
         st.session_state["logged_in"] = False
         st.session_state["current_user"] = None
         navigate_to_page("home")
+
 
 
 
