@@ -1,0 +1,7 @@
+libsdl2-dev
+libsmpeg-dev
+libportmidi-dev
+libavformat-dev
+libswscale-dev
+libjpeg-dev
+zlib1g-dev
