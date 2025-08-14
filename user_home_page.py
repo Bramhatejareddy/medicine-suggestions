@@ -3,7 +3,6 @@ import nltk
 import streamlit as st
 from streamlit_option_menu import option_menu
 from database import fetch_user
-import pandas as pd
 import pandas as pd 
 from nltk.tokenize import word_tokenize
 from nltk.downloader import download, download_shell
@@ -22,17 +21,15 @@ import pandas as pd
 import datetime
 import calendar
 import requests
-import pygame
 os.environ["SDL_AUDIODRIVER"] = "dummy"
-pygame.mixer.init()
 import time
 ALARM_SOUND = 'audio.mp3'  # Path to your buzzer sound file
-def play_buzzer():
+"""def play_buzzer():
     pygame.mixer.music.load(ALARM_SOUND)
     pygame.mixer.music.play()
     time.sleep(2)  
     pygame.mixer.music.stop()
-ps = PorterStemmer()
+ps = PorterStemmer()"""
 STOPWORDS = stopwords.words('english')
 new_word = ["having","feel",'symptoms','symptoms','experiencing','experienced','feeling']
 STOPWORDS.extend(new_word)
@@ -657,6 +654,7 @@ def user_home_page():
         st.session_state["logged_in"] = False
         st.session_state["current_user"] = None
         navigate_to_page("home")
+
 
 
 
